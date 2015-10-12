@@ -1,0 +1,66 @@
+\documentclass{article}
+
+
+% Packages
+\usepackage[utf8]{inputenc} % For Norwegian letters
+\usepackage{tabulary} % For nice tables
+
+% Config
+\renewcommand\thesection{\alph{section}}
+
+
+\begin{document}
+
+% Title
+\title{\textbf{Exercise 1} \\ TDT4137}
+\author{Simon Borøy-Johnsen \\ MTDT}
+\date{\today}
+\maketitle
+
+% Content
+% Task a)
+\section{}
+Assuming eye movement is not necessary, as one normally will detect that the brake lights are lit without looking directly at them. \\
+
+\begin{tabulary}{\textwidth}{|L|L|}
+	\hline
+	\textbf{Event} & \textbf{Time passed} \\\hline
+	Break light turns red & $\tau=0.00$ \\\hline
+	Perceptual processor fetches the image into VIS and WM & $\tau=\tau_p$ \\\hline
+	Cognitive processor generates the motor command to press the brakes & $\tau=\tau_p+\tau_c$ \\\hline
+	Motor processor executes the command & $\tau=\tau_p+\tau_c+\tau_m$ \\\hline
+	DONE & $\tau=\tau_p+\tau_c+\tau_m$\newline$\tau=100ms+70.0ms+70.0ms$\newline$\tau=240ms$ \\\hline
+\end{tabulary}
+
+% Task b)
+\section{}
+Assuming eye movement is not necessary. \\
+
+\begin{tabulary}{\textwidth}{|L|L|}
+	\hline
+	\textbf{Event} & \textbf{Time passed} \\\hline
+	Flag appears on monitor & $\tau=0.00$ \\\hline
+	Perceptual processor fetches the image into VIS and WM & $\tau=\tau_p$ \\\hline
+	Fetching the semantic name from LTM to WM & $\tau=\tau_p+\tau_c$ \\\hline
+	Fetching that the flag is Scandinavian from LTM & $\tau=\tau_p+\tau_c+\tau_c$ \\\hline
+	DONE & $\tau=\tau_p+\tau_c+\tau_c$\newline$\tau=100ms+70.0ms+70.0ms$\newline$\tau=240ms$ \\\hline
+\end{tabulary}
+
+% Task c)
+\section{}
+The Index of Difficulty describes the difficulty of performing a movement task accurately. According to Fitts, the Index of Difficulty is $log_2(D/S+0.5)$, where D is the distance to the target and S is the size of the target.
+
+Using Shannon's version of Fitts' law to calculate the duration of moving the cursor to the menu bar, we get the following results: \\
+\begin{tabulary}{\textwidth}{L L L}
+	Windows: & $50.0+150*log_2(80.0/5.00+1.00)=663ms$ &  \\
+	Machintosh: & $50.0+150*log_2(80.0/50.0+1.00)=257ms$ &  \\
+\end{tabulary}
+
+% Task d)
+\section{}
+To create an illusion of continuity in time, there has be be more images than perceptual cycles per time unit. Frame rate (fr) has to be bigger than $1/\tau_p$. This way the stream of perceptual images 'melts' together to one continuous impression.
+
+$fr>1.00/\tau_p=1.00/100ms=10.0/s$ \\
+The frame rate has to be larger than 10 frames per seconds.
+
+\end{document}

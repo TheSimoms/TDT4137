@@ -1,0 +1,272 @@
+\documentclass{article}
+
+
+% Packages
+\usepackage[utf8]{inputenc} % For Norwegian letters
+\usepackage{tabulary} % For nice tables
+\usepackage{multirow} % For row spanning
+\usepackage[normalem]{ulem} % For nice underlining
+
+% Config
+\renewcommand\thesection{\alph{section}}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+% Title
+\title{\textbf{Exercise 2} \\ TDT4137}
+\author{Simon Borøy-Johnsen \\ MTDT}
+\date{\today}
+\maketitle
+
+Assuming person's name and phone number is already retained in the working memory. Also assuming it is known how the keyboard and favourites menu works.
+
+% Content
+% Task a)
+\section{}
+
+\subsection*{Unit tasks}
+\begin{itemize}
+	\item Call
+	\item Open call screen
+	\item Dial number
+	\item Select name from favourite list
+	\item Make the call
+\end{itemize}
+
+\subsection*{Top-level}
+Method to accomplish goal of \uline{making a call}
+
+\begin{tabulary}{\textwidth}{| L | L |}
+	\hline
+	Step 1. & Get next unit task information \\\hline
+	Step 2. & Decide: If no more unit tasks, then return with goal accomplished \\\hline
+	Step 3. & Accomplish the goal of 
+\uline{performing the unit task} \\\hline
+	Step 4. & Goto 1 \\\hline
+\end{tabulary}\\
+
+Selection rule set for the goal of \uline{performing the unit task}
+
+\begin{tabulary}{\textwidth}{| L |}
+	\hline
+	If the task is \textit{call}, then accomplish the goal of \uline{calling} \\\hline
+	If the task is \textit{open call screen}, then accomplish the goal of \uline{opening call screen} \\\hline
+	If the task is \textit{dial number}, then accomplish the goal of \uline{dialling number} \\\hline
+	If the task is \textit{select name from favourite list}, then accomplish the goal of \uline{selecting name from favourite list} \\\hline
+	If the task is \textit{make the call}, then accomplish the goal of \uline{making the call} \\\hline
+	Return with goal accomplished \\\hline
+\end{tabulary}
+
+% Task b)
+\section{}
+\subsection*{Command methods}
+Method to accomplish goal of \uline{calling}
+
+\begin{tabulary}{\textwidth}{| L | L |}
+	\hline
+	Step 1. & Accomplish the goal of \uline{opening call screen} \\\hline
+	Step 2. & Decide: If call method is \textit{dial number} Then accomplish the goal of \uline{dialling number} Else accomplish the goal of \uline{selecting name from favourite list} \\\hline
+	Step 3. & Accomplish the goal of \uline{making the call} \\\hline
+	Step 4. & Return with goal accomplished \\\hline
+\end{tabulary}\\
+
+Method to accomplish goal of \uline{making the call}
+
+\begin{tabulary}{\textwidth}{| L | L |}
+	\hline
+	Step 1. & \uline{Recall} that the button is the big green one, and accomplish the goal of \uline{pressing the button} \\\hline
+	Step 2. & Return with goal accomplished \\\hline
+\end{tabulary}\\
+
+Method to accomplish goal of \uline{opening keyboard}
+
+\begin{tabulary}{\textwidth}{| L | L |}
+	\hline
+	Step 1. & \uline{Recall} that the button is "Tastatur", and accomplish the goal of \uline{pressing the button} \\\hline
+	Step 2. & Return with goal accomplished \\\hline
+\end{tabulary}\\
+
+Method to accomplish goal of \uline{opening favourites menu}
+
+\begin{tabulary}{\textwidth}{| L | L |}
+	\hline
+	Step 1. & \uline{Recall} that the button is "Favoritter", and accomplish the goal of \uline{pressing the button} \\\hline
+	Step 2. & Return with goal accomplished \\\hline
+\end{tabulary}\\
+
+Method to accomplish goal of \uline{dialling number}
+
+\begin{tabulary}{\textwidth}{| L | L |}
+	\hline
+	Step 1. & Decide: If all digits are pressed Then return with goal accomplished \\\hline
+	Step 2. & \uline{Recall} next digit to press \\\hline
+	Step 3. & Accomplish goal of \uline{pressing digit button} \\\hline
+	Step 4. & \uline{Forget} next digit to press \\\hline
+	Step 5. & Goto 1 \\\hline
+\end{tabulary}\\
+
+Method to accomplish goal of \uline{selecting name from favourite list}
+
+\begin{tabulary}{\textwidth}{| L | L |}
+	\hline
+	Step 1. & \uline{Recall} person name \\\hline
+	Step 2. & Accomplish the goal of \uline{pressing person's name button} \\\hline
+	Step 3. & \uline{Forget} person name, and return with goal accomplished \\\hline
+\end{tabulary}\\
+
+Method to accomplish goal of \uline{pressing a button}
+
+\begin{tabulary}{\textwidth}{| L | L |}
+	\hline
+	Step 1. & \uline{Recall} button name and \uline{retrive from LTM} the icon for it, and \uline{retain} the icon \\\hline
+	Step 2. & \uline{Recall} the icon, and locate it on the screen \\\hline
+	Step 2. & Move finger to the icon \\\hline
+	Step 3. & Press finger on screen \\\hline
+	Step 4. & \uline{Recall} the icon, and verify that it is pressed \\\hline
+	Step 5. & Remove finger from screen \\\hline
+	Step 6. & \uline{Forget} icon, \uline{forget} button name, and return with goal accomplished \\\hline
+\end{tabulary}
+
+\subsection*{Selection methods}
+
+Selection rule set for the goal of \uline{opening call screen}
+
+\begin{tabulary}{\textwidth}{| L |}
+	\hline
+	If the call method is \textit{dial number}, then accomplish the goal of \uline{opening keyboard} \\\hline
+	If the call method is \textit{favourite method}, then accomplish the goal of \uline{opening favourites menu} \\\hline
+	Return with goal accomplished \\\hline
+\end{tabulary}
+
+% Task c)
+\section{}
+\subsection*{Dialling}
+\begin{itemize}
+	\item Method for accomplishing goal of \uline{calling}
+	\item Step 1. Accomplish the goal of \uline{opening call screen}
+		\begin{itemize}
+			\item Method for accomplishing goal of \uline{opening call screen}
+			\item Step 1.1. If the call method is \textit{dial number}, then accomplish the goal of \uline{opening keyboard}
+			\begin{itemize}
+				\item Method for accomplishing goal of \uline{opening keyboard}
+				\item Step 1.1.1. \uline{Recall} that the button is \uline{"Tastatur"}
+				\item Step 1.1.2. Accomplish the goal of \uline{pressing the button}
+				\begin{itemize}
+					\item Method for accomplishing goal of \uline{pressing button}
+					\item Step 1.1.2.1. Recall button name and retrive from LTM the icon for it, and retain the icon
+					\item Step 1.1.2.2. Recall the icon, and locate it on the screen
+					\item Step 1.1.2.3. Move finger to the icon
+					\item Step 1.1.2.4. Press finger on screen
+					\item Step 1.1.2.5. Recall the icon, and verify that it is pressed
+					\item Step 1.1.2.6. Remove finger from screen
+					\item Step 1.1.2.7. Forget icon, forget button name, and return with goal accomplished
+				\end{itemize}
+    				\item Return with goal accomplished
+			\end{itemize}
+    			\item Return with goal accomplished
+		\end{itemize}
+	\item Step 2. Accomplish the goal of \uline{dialling number}
+		\begin{itemize}
+    			\item Method for accomplishing goal of \uline{dialling number}
+    			\item Step 2.1 Decide: If all digits are pressed Then return with goal accomplished
+    			\item Step 2.2 Recall next digit to press
+    			\item Step 2.3 Accomplish goal of \uline{pressing digit button}
+    			\begin{itemize}
+					\item Method for accomplishing goal of \uline{pressing button}
+					\item Step 2.3.1. Recall button name and retrive from LTM the icon for it, and retain the icon
+					\item Step 2.3.2. Recall the icon, and locate it on the screen
+					\item Step 2.3.3. Move finger to the icon
+					\item Step 2.3.4. Press finger on screen
+					\item Step 2.3.5. Recall the icon, and verify that it is pressed
+					\item Step 2.3.6. Remove finger from screen
+					\item Step 2.3.7. Forget icon, forget button name, and return with goal accomplished
+				\end{itemize}
+    			\item Step 2.4 Forget next digit to press
+    			\item Repeat 7 times...
+    			\item Return with goal accomplished
+		\end{itemize}
+	\item Step 3. Accomplish the goal of \uline{making the call}
+		\begin{itemize}
+			\item Method for accomplishing goal of \uline{making the call}
+			\item Step 3.1. \uline{Recall} that the button is the big green one
+			\item Step 3.2. Accomplish the goal of \uline{pressing the button}
+				\begin{itemize}
+					\item Method for accomplishing goal of \uline{pressing button}
+					\item Step 3.2.1. Recall button name and retrive from LTM the icon for it, and retain the icon
+					\item Step 3.2.2. Recall the icon, and locate it on the screen
+					\item Step 3.2.3. Move finger to the icon
+					\item Step 3.2.4. Press finger on screen
+					\item Step 3.2.5. Recall the icon, and verify that it is pressed
+					\item Step 3.2.6. Remove finger from screen
+					\item Step 3.2.7. Forget icon, forget button name, and return with goal accomplished
+				\end{itemize}
+    			\item Return with goal accomplished
+		\end{itemize}
+	\item Return with goal accomplished
+\end{itemize}
+
+\subsection*{Using favourites menu}
+\begin{itemize}
+	\item Method for accomplishing goal of \uline{calling}
+	\item Step 1. Accomplish the goal of \uline{opening call screen}
+		\begin{itemize}
+			\item Method for accomplishing goal of \uline{opening call screen}
+			\item Step 1.1. If the call method is \textit{use favourites menu}, then accomplish the goal of \uline{opening favourites menu}
+			\begin{itemize}
+				\item Method for accomplishing goal of \uline{opening favourites menu}
+				\item Step 1.1.1. \uline{Recall} that the button is \uline{"Favoritter"}
+				\item Step 1.1.2. Accomplish the goal of \uline{pressing the button}
+				\begin{itemize}
+					\item Method for accomplishing goal of \uline{pressing button}
+					\item Step 1.1.2.1. Recall button name and retrive from LTM the icon for it, and retain the icon
+					\item Step 1.1.2.2. Recall the icon, and locate it on the screen
+					\item Step 1.1.2.3. Move finger to the icon
+					\item Step 1.1.2.4. Press finger on screen
+					\item Step 1.1.2.5. Recall the icon, and verify that it is pressed
+					\item Step 1.1.2.6. Remove finger from screen
+					\item Step 1.1.2.7. Forget icon, forget button name, and return with goal accomplished
+				\end{itemize}
+    				\item Return with goal accomplished
+			\end{itemize}
+    			\item Return with goal accomplished
+		\end{itemize}
+	\item Step 2. Accomplish the goal of \uline{selecting name from favourites menu}
+		\begin{itemize}
+    			\item Method for accomplishing goal of \uline{selecting name from favourites menu}
+    			\item Step 2.1 Recall person name
+    			\item Step 2.2 Accomplish the goal of \uline{pressing person's name button}
+    			\begin{itemize}
+					\item Method for accomplishing goal of \uline{pressing button}
+					\item Step 2.2.1. Recall button name and retrive from LTM the icon for it, and retain the icon
+					\item Step 2.2.2. Recall the icon, and locate it on the screen
+					\item Step 2.2.3. Move finger to the icon
+					\item Step 2.2.4. Press finger on screen
+					\item Step 2.2.5. Recall the icon, and verify that it is pressed
+					\item Step 2.2.6. Remove finger from screen
+					\item Step 2.2.7. Forget icon, forget button name, and return with goal accomplished
+				\end{itemize}
+    			\item Step 2.4 Forget person name, and return with goal accomplished
+    			\item Return with goal accomplished
+		\end{itemize}
+	\item Step 3. Accomplish the goal of \uline{making the call}
+		\begin{itemize}
+			\item Method for accomplishing goal of \uline{making the call}
+			\item Step 3.1. \uline{Recall} that the button is the big green one
+			\item Step 3.2. Accomplish the goal of \uline{pressing the button}
+				\begin{itemize}
+					\item Method for accomplishing goal of \uline{pressing button}
+					\item Step 3.2.1. Recall button name and retrive from LTM the icon for it, and retain the icon
+					\item Step 3.2.2. Recall the icon, and locate it on the screen
+					\item Step 3.2.3. Move finger to the icon
+					\item Step 3.2.4. Press finger on screen
+					\item Step 3.2.5. Recall the icon, and verify that it is pressed
+					\item Step 3.2.6. Remove finger from screen
+					\item Step 3.2.7. Forget icon, forget button name, and return with goal accomplished
+				\end{itemize}
+    			\item Return with goal accomplished
+		\end{itemize}
+	\item Return with goal accomplished
+\end{itemize}
+
+\end{document}
