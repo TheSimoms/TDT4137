@@ -1,0 +1,40 @@
+\documentclass{article}
+
+
+% Packages
+\usepackage[utf8]{inputenc} % For Norwegian letters
+\usepackage{tabulary} % For nice tables
+\usepackage{multirow} % For row spanning
+\usepackage[normalem]{ulem} % For nice underlining
+
+% Config
+\renewcommand\thesection{\alph{section}}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+% Title
+\title{\textbf{Exercise 3} \\ TDT4137}
+\author{Simon Borøy-Johnsen \\ MTDT}
+\date{\today}
+\maketitle
+
+\stepcounter{section}
+
+% Content
+% Task b)
+\section{}
+The weights change when changing initial random values for the threshold and weights. Some combinations even cause the weights to repeat for each iteration, never converging.
+
+% Task c)
+\section{}
+\begin{itemize}
+    \item The accuracy of the results seems to decline noticeably with less than three nodes in the hidden layer.
+    \item The rapid decline when using less than three nodes in the hidden layer might come from the fact that three nodes is the minimum number of nodes able to represent eight different values ($2^3 = 8$).
+    \item What we are doing here is regression using a neural network over many epochs. The network adapts the weights to the input-hidden output relationship. This way, the network generates outputs based on the training data.
+    
+    For decimal values inside the valid range, the outputs are accurate. This is because the network has some approximate knowledge on what these values should be. For integer values close to the valid range, the outputs are also pretty accurate, but for values further away from the valid range, the accuracy declines rapidly.
+\end{itemize}
+
+
+\end{document}
